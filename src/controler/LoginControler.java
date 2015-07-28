@@ -31,30 +31,27 @@ public class LoginControler implements Initializable {
 			// System.out.println(txtUserName.getText());
 			// System.out.println(txtPassword.getText());
 			DataAccess access = new DataAccessFacade();
-			Auth check = access.login(txtUserName.getText(),
-					txtPassword.getText());
-			if (check != null) {
-				JOptionPane.showMessageDialog(null, "Login Successfully");
-				try {
+			Auth check = access.login(txtUserName.getText(), txtPassword.getText());
+			try {
+				if (check.equals(Auth.LIBRARIAN)) {
 					Stage primaryStage = new Stage();
-					Parent root = FXMLLoader.load(getClass().getResource(
-							"../fxml/form/Form.fxml"));
+					Parent root = FXMLLoader.load(getClass().getResource("../fxml/form/Form.fxml"));
 					Scene scene = new Scene(root, 600, 500);
 					primaryStage.setScene(scene);
 					primaryStage.show();
-
-				} catch (Exception e) {
-					e.printStackTrace();
 				}
-
-			} else {
-				JOptionPane.showMessageDialog(null, "Login Fail");
-				txtUserName.setText(" ");
-				txtPassword.setText("");
+				else if (check == Auth.ADMIN) {
+					System.out.println("show admin gui...");
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "Login Fail");
+					txtUserName.setText(" ");
+					txtPassword.setText("");
+				}
 			}
-
+			catch (Exception e) {
+				e.printStackTrace();
+			}
 		});
-
 	}
-
 }
