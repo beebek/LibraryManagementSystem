@@ -17,7 +17,7 @@
           </font>
         </Label>
         <Label font="$x1" text="Password" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-        <Button fx:id="btnLogin" font="$x1" mnemonicParsing="false" prefWidth="75.0" text="Login" textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <Button fx:id="btnLogin" font="$x1" mnemonicParsing="false" prefWidth="75.0" text="Initial Login" textOverrun="CLIP" GridPane.columnIndex="1" GridPane.rowIndex="3" />
         <TextField fx:id="txtUserName" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
         <PasswordField fx:id="txtPassword" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
         <Label font="$x1" minHeight="12.0001220703125" prefHeight="22.0" prefWidth="75.0" text="Login Form" textOverrun="CLIP" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
